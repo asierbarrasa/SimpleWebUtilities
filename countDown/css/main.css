@@ -3,6 +3,10 @@ input {
 }
 
 #btn {
-  width: 141px;
+  width: 100%;
+}
+
+.top {
+  width: 49%;
 }
 /*# sourceMappingURL=main.css.map */
