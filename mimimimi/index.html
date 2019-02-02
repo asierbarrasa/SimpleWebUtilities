@@ -20,19 +20,19 @@
     <button onclick="myFunction()" class="waves-effect waves-light btn">Copy</button> -->
     <div class="card">
         <br>
-            <h2 class="card-title center-align">Cambia tus vocales por i.</h2>
-    <div class="row">
-        <div class="col s6 offset-s3">
-            <input type="text" id="input">
+        <h2 class="card-title center-align">Herramienta para ganar discusiones.</h2>
+        <div class="row">
+            <div class="col s6 offset-s3">
+                <input type="text" id="input" autofocus>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col s6 offset-s3 center-align">
-            <button onclick="myFunction()" class="waves-effect waves-light btn">Change</button>
+        <div class="row">
+            <div class="col s6 offset-s3 center-align">
+                <button onclick="myFunction()" class="waves-effect waves-light btn" id="btn">Change</button>
+            </div>
         </div>
-    </div>
-   <br>
-   <br><br>
+        <br>
+        <br><br>
 
 
     </div>
@@ -40,8 +40,15 @@
 
 
     <script>
+        input.addEventListener("keyup", function (event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                document.getElementById("btn").click();
+            }
+        });
+
+
         function myFunction() {
-            console.log("entra");
             var myStr = document.getElementById("input").value;
             var newStr = myStr.replace(/a|e|i|o|u|A|E|I|O|U/g, "i");
             document.getElementById("input").value = newStr;
