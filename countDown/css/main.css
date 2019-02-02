@@ -2,7 +2,23 @@ input {
   text-align: center;
 }
 
-#btn {
-  width: 141px;
+button {
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+  color: black;
+}
+
+:-ms-input-placeholder {
+  color: black;
+}
+
+::-ms-input-placeholder {
+  color: black;
+}
+
+::placeholder {
+  color: black;
 }
 /*# sourceMappingURL=main.css.map */
