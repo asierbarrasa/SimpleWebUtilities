@@ -4,6 +4,7 @@ input {
 
 button {
   width: 100%;
+  color: red;
 }
 
 ::-webkit-input-placeholder {
