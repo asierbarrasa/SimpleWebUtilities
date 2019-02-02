@@ -53,7 +53,6 @@ function _timer(callback) {
     //  Same as the name, this will stop or pause the timer ex. timer.stop()
     this.stop = function () {
         clearInterval(timer_id);
-        document.getElementById("minutes").setAttribute("type", "text");
     }
 
     // Reset the timer to zero or reset it to your own custom time ex. reset to zero second timer.reset(0)
