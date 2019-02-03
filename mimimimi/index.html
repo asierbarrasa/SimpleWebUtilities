@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -16,9 +15,6 @@
 
 <body>
 
-    <!-- <input type="text" id="input">
-    <label for="" id="label">Label</label>
-    <button onclick="myFunction()" class="waves-effect waves-light btn">Copy</button> -->
     <div class="card">
         <br>
         <h2 class="card-title center-align">Herramienta para ganar discusiones.</h2>
@@ -34,7 +30,6 @@
         </div>
         <br>
         <br><br>
-
 
     </div>
 
@@ -52,7 +47,9 @@
         function myFunction() {
             var myStr = document.getElementById("input").value;
             var newStr = myStr.replace(/a|e|i|o|u|A|E|I|O|U| /g, "i");
-            newStr = myStr.replace(/\u00e1| \u00e9 |\u00ed |\u00f3 \u00fa| \u00c1 |\u00c9| \u00cd |\u00d3 |\u00da /g, "í");
+            newStr = myStr.replace(/\u00e1| \u00e9 |\u00ed |\u00f3 \u00fa/g, "í");
+            newStr = myStr.replace(/\u00c1 |\u00c9| \u00cd |\u00d3 |\u00da/g, "Í");
+            
             
             document.getElementById("input").value = newStr;
             var copyText = document.getElementById("input");
@@ -63,7 +60,5 @@
             })
         }
     </script>
-
 </body>
-
 </html>
