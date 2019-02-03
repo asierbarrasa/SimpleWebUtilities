@@ -1,16 +1,19 @@
 function _timer(callback) {
     var timer_id; //    This is used by setInterval function
+    var status;
+    var time;
+    var timeSec = document.getElementById("minutes").value * 60;
+    var display = document.getElementById("displayTime");
+
+    var timer = timeSec,
+        minutes, seconds;
 
     // this will start the timer ex. start the timer with 1 second interval timer.start(1000) 
 
-    this.start = function (timeSec) {
-
+    this.start = function (status) {
         document.getElementById("minutes").setAttribute("type", "hidden");
-        var timeSec = document.getElementById("minutes").value * 60;
-        var display = document.getElementById("displayTime");
-
-        var timer = timeSec,
-            minutes, seconds;
+        timeSec = document.getElementById("minutes").value * 60;
+      
 
         M.toast({
             html: timeSec / 60 + " mins timer strated."
@@ -18,33 +21,35 @@ function _timer(callback) {
 
 
 
+        // if (status == 0) {
+            document.getElementById("start").value = 'ppp';
+            timer_id = setInterval(function () {
 
-        timer_id = setInterval(function () {
 
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
 
-            minutes = parseInt(timer / 60, 10);
-            seconds = parseInt(timer % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
 
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
 
-            display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) {
+                    timer = timeSec;
+                }
 
-            if (--timer < 0) {
-                timer = timeSec;
-            }
- 
-            if (minutes == 0 && seconds == 0) {
-                clearInterval(timer_id);
-                document.getElementById("minutes").setAttribute("type", "text");
-                M.toast({
-                    html: "Fin"
-                })
+                if (minutes == 0 && seconds == 0) {
+                    clearInterval(timer_id);
+                    document.getElementById("minutes").setAttribute("type", "text");
+                    M.toast({
+                        html: "Fin"
+                    })
 
-            }
+                }
 
-            callback(time);
-        }, 1000);
+                callback(time);
+            }, 1000);
+        
     }
 
 
@@ -58,8 +63,9 @@ function _timer(callback) {
     // Reset the timer to zero or reset it to your own custom time ex. reset to zero second timer.reset(0)
     this.reset = function () {
         clearInterval(timer_id);
-        document.getElementById("displayTime").textContent ='00:00';
+        document.getElementById("displayTime").textContent = '00:00';
         document.getElementById("minutes").setAttribute("type", "text");
+        document.getElementById("minutes").value = '';
     }
 
 }
