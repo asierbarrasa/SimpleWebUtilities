@@ -51,7 +51,9 @@
 
         function myFunction() {
             var myStr = document.getElementById("input").value;
-            var newStr = myStr.replace(/a|e|i|o|u|A|E|I|O|U/g, "i");
+            var newStr = myStr.replace(/a|e|i|o|u|A|E|I|O|U| /g, "i");
+            newStr = myStr.replace(/\u00e1| \u00e9 |\u00ed |\u00f3 \u00fa| \u00c1 |\u00c9| \u00cd |\u00d3 |\u00da /g, "í");
+            
             document.getElementById("input").value = newStr;
             var copyText = document.getElementById("input");
             copyText.select();
