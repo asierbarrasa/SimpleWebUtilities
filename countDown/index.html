@@ -22,7 +22,7 @@
         <h1 class="card-title center-align" id="displayTime">00:00</h1>
         <div class="row">
             <div class="col s8 offset-s2 m4 offset-m4 center-align">
-                <input type="text" id="minutes" placeholder="Introducir minutos" autofocus>
+                <input type="text" id="minutes" placeholder="Introducir minutos" onfocus="this.placeholder=''">
             </div>
         </div>
         <div class="row">
@@ -31,11 +31,11 @@
 
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col s8 offset-s2 m4 offset-m4 center-align">
                 <button onclick="timer.stop()" class="waves-effect waves-light btn lime">Stop</button>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col s8 offset-s2 m4 offset-m4 center-align">
                 <button onclick="timer.reset()" class="waves-effect waves-light btn red" id="btn">Reset</button>

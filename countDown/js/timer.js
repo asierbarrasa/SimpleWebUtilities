@@ -52,7 +52,7 @@ function _timer(callback) {
 
                 callback(time);
             }, 1000);
-        
+        // }
     }
 
 
