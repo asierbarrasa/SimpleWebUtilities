@@ -4,9 +4,7 @@ input {
 
 button {
   width: 100%;
-  color: red;
 }
-
 
 ::-webkit-input-placeholder {
   color: black;
@@ -22,5 +20,19 @@ button {
 
 ::placeholder {
   color: black;
+}
+
+.new {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin: auto;
+  width: 100%;
+}
+
+html, body {
+  height: 100%;
+  position: relative;
 }
 /*# sourceMappingURL=main.css.map */
